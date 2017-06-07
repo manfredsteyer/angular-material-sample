@@ -5,8 +5,8 @@ import { MdSnackBar, MD_DIALOG_DATA } from "@angular/material";
 import { Observable } from "rxjs";
 
 @Component({
-    selector: 'flight-alternative',
-    styles: ['p { color: white; font-size:16px; }'],
+    selector: 'flight-warning',
+    styles: ['* { font-size:16px; font-family: arial; }'],
     template: `
         <h2 md-dialog-title>Info</h2>
         <md-dialog-content>May we track your activities to provide a better user experience?</md-dialog-content>

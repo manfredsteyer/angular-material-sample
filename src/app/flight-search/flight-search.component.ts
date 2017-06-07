@@ -35,20 +35,19 @@ export class FlightSearchComponent implements OnInit {
         private snackBar: MdSnackBar,
         private dialog: MdDialog
         ) {
+
+            let d = this.dialog.open(FlightWarningComponent, {
+                data: 42
+            });
+
+            d.afterClosed().subscribe(info => {
+                console.debug('dialog result', info);
+            });
+
     }
 
     ngOnInit() {
 
-        setTimeout(() => {
-        let dialog = this.dialog.open(FlightWarningComponent, {
-            data: 42
-        });
-
-        dialog.afterClosed().subscribe(info => {
-            console.debug('dialog result', info);
-        });
-    }, 0);
-    
         this.airports$ = Observable
             .fromEvent(this.toField.nativeElement, 'input')
             .map((event: any) => event.target.value)
